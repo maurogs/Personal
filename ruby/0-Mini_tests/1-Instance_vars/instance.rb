@@ -65,6 +65,7 @@ class Questions
         @number = ''
         number.split("").each do |i|
             if (i.ord < 48) or (i.ord > 57)
+            	puts "Not a valid number, try again."
                 return ask_phone
             else
                 @number << i
@@ -82,6 +83,7 @@ class Questions
 		profile.hi
 		puts Person.common_friend
 	end
+
 
 
 end

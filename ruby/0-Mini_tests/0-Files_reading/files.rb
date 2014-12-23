@@ -10,17 +10,17 @@ puts ""
 
 file_reading = IO.read("text.txt")
 
-puts "El nombre que sale en el archivo es #{file_reading}"
+puts "The name on file is #{file_reading}"
 
 puts "#####################################################"
 
 
-print "Escribe el nombre del archivo de origen (text.txt) --> "
+print "Write the origin file name (text.txt) --> "
 origin_file = gets.chomp
 origin_file_read = IO.read("#{origin_file}")
 puts "En el archivo pone: #{origin_file_read}"
 
-print "Escribe el archivo de destino --> "
+print "Write destiny file name --> "
 destiny_file = gets.chomp
 
 
