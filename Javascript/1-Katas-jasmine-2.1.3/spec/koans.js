@@ -26,75 +26,75 @@ describe("the JavaScript language", function(){
         expect(typeof(x)).toEqual('number');
     });
 
-/*
     it("surprises me, NaN is not comparable with NaN", function(){
-        expect(5 / "a").not.toEqual(5 / "a");
+        expect(5 / "a").toEqual(NaN);
         expect(typeof(NaN)).toEqual('number');
         expect(isNaN(5 / "a")).toBeTruthy();
     });
 
     it("considers an empty string to be falsy", function(){
-        //expect("" == false).toBe......();// Truthy or Falsy
-        //expect("" === false).toBe.....();// Truthy or Falsy
+        expect("" == false).toBeTruthy(); 
+        expect("" === false).toBeFalsy();
     });
 
     it("considers zero to be falsy", function(){
-        //expect(0 == false).toBe......();// Truthy or Falsy
-        //expect(0 === false).toBe.....();// Truthy or Falsy
+        expect(0 == false).toBeTruthy();
+        expect(0 === false).toBeFalsy();
     });
 
     it("considers nulls to be falsy", function(){
-        //expect(null == false).toBe......();// Truthy or Falsy
-        //expect(null === false).toBe.....();// Truthy or Falsy
+        expect(null == false).toBeFalsy();
+        expect(null === false).toBeFalsy();
     });
 
     it("knows the type of a function", function(){
         function x(){}
 
         expect(typeof(x)).toBe('function');
-        //expect(typeof(xxx)).toBe('...');// Truthy or Falsy
+        expect(typeof(xxx)).toBe('undefined');
     });
 
     it("concatenate arrays - well, kind of", function(){
         var a = [1,2,3];
         var b = [4,5,6];
 
-        //expect(a + b).toEqual('...');
+        expect(a + b).toEqual('1,2,34,5,6');
     });
 
     it("joins arrays and strings", function(){
         var a = [1,2,3];
 
-        //expect ("1" + a).toEqual(...);
-        //expect(a + "1").toEqual(...);
+        expect ("1" + a).toEqual("11,2,3");
+        expect(a + "1").toEqual("1,2,31");
     });
 
     it("joins arrays and other things", function(){
         var a = [1,2,3];
         var b = ['x', 'y', 'z'];
 
-        //expect(1 + a).toEqual(...);
-        //expect(a + 1).toEqual(...);
-        //expect(1 + b).toEqual(...);
-        //expect(true + a).toEqual(...);
+        expect(1 + a).toEqual('11,2,3');
+        expect(a + 1).toEqual('1,2,31');
+        expect(1 + b).toEqual('1x,y,z');
+        expect(true + a).toEqual('true1,2,3');
     });
 
     it("can't compare arrays", function(){
         var a = [1,2,3];
         var b = [1,2,3];
 
-        //expect(a == b).toBe.....();  // Truthy or Falsy
-        //expect(a === b).toBe.....(); // Truthy or Falsy
+        expect(a == b).toBeFalsy();  
+        expect(a === b).toBeFalsy(); 
     });
 
     it("is not the same to compare by value than by reference ", function(){
         var a = [1,2,3];
         var b = [1,2,3];
 
-        expect(a).toEqual(b);        // Jasmine toEqual compares by value
-        expect(a).not.toBe(b);       // Jasmine toBe compares by reference
+        expect(a).toEqual(b);        // toEqual compares by value
+        expect(a).not.toBe(b);       // toBe compares by reference
     });
 
+/*
     // TODO: take some more curious examples from Gary Bernhart's WAT presentation
   });
 
