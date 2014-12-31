@@ -94,8 +94,7 @@ describe("the JavaScript language", function(){
         expect(a).not.toBe(b);       // toBe compares by reference
     });
 
-/*
-    // TODO: take some more curious examples from Gary Bernhart's WAT presentation
+
   });
 
   describe("when using functions", function(){
@@ -105,7 +104,7 @@ describe("the JavaScript language", function(){
             return 'some example';
         }
 
-        //expect(example()).toEqual('...');
+        expect(example()).toEqual('some example');
     });
 
     it("can declare anonymous functions", function(){
@@ -113,8 +112,8 @@ describe("the JavaScript language", function(){
             return a + b;
         };
 
-        //expect(typeof(someVar)).toBe('...');
-        //expect(someVar(1,1)).toBe('...');
+        expect(typeof(someVar)).toBe('function');
+        expect(someVar(1,1)).toBe(2);
     });
 
     it("doesn't care about the declaration order when they are named", function(){
@@ -122,7 +121,7 @@ describe("the JavaScript language", function(){
             return exampleB(1);
         }
         
-        //expect(exampleA()).toEqual('...');
+        expect(exampleA()).toEqual(1);
         
         function exampleB(arg1){
             return arg1;
@@ -134,11 +133,11 @@ describe("the JavaScript language", function(){
             return exampleB(1);
         };
         
-        //expect(exampleA()).toEqual(1);
-        
         var exampleB = function(arg1){
             return arg1;
         };
+
+        expect(exampleA()).toEqual(1);
     });
 
     it("can use optional parameters", function(){
@@ -147,16 +146,16 @@ describe("the JavaScript language", function(){
               return a + b + c;
             return a + b;
         }
-        ///expect(example(1,1,1)).toBe('...');
-        ///expect(example(1,1)).toBe('...');
+        expect(example(1,1,1)).toBe(3);
+        expect(example(1,1)).toBe(2);
     });
 
     it("anonymous functions are anonymous", function(){
          var x = function z(){
             return 1;
          };
-         //expect(typeof(z)).toEqual('...');
-         //expect(x()).toEqual(...);
+         expect(typeof(z)).toEqual('undefined');
+         expect(x()).toEqual(1);
     });
 
     it("can create closures with free variables", function(){
@@ -169,7 +168,7 @@ describe("the JavaScript language", function(){
           return internal();
         }
 
-        //expect(external()).toBe('...');
+        expect(external()).toBe(2);
     });
 
     it("can create closures with several free variables", function(){
@@ -182,7 +181,7 @@ describe("the JavaScript language", function(){
           }
         }
 
-        //expect(external()).toBe(6);
+        expect(external()).toBe(undefined);
     });
 
     it("defines a pure function when there are no free variables", function(){
@@ -196,7 +195,7 @@ describe("the JavaScript language", function(){
           return internal(4,4);
         }
 
-        //expect(external()).toBe('...');
+        expect(external()).toBe(9);
     });
 
     it("can use immediately-invoked functions to take advantage of scopes", function(){
@@ -218,7 +217,7 @@ describe("the JavaScript language", function(){
         myNamespace.addOne();
         myNamespace.addOne();
 
-        //expect(myNamespace.giveMeTheCount()).toBe('...');
+        expect(myNamespace.giveMeTheCount()).toBe(2);
     });
 
     it("can return other functions as a function result", function(){
@@ -230,7 +229,7 @@ describe("the JavaScript language", function(){
 
         var f = plus(5);
         
-        //expect(f(3)).toBe('...');
+        expect(f(3)).toBe(8);
     });
 
     it("can have functions that receive other functions as arguments", function(){
@@ -242,7 +241,8 @@ describe("the JavaScript language", function(){
 
         var f = plus(function(){return 1;});
 
-        //expect(f(2)).toBe('...');
+
+        expect(f(2)).toBe(3);
     });
 
     it("can invoke functions indirectly using the special 'call'", function(){
@@ -250,7 +250,7 @@ describe("the JavaScript language", function(){
             return a + b;
         }
 
-        //expect(f.call(f,1,1)).toEqual('...');
+        expect(f.call(f,1,1)).toEqual(2);
     });
 
     it("can invoke functions indirectly using the special 'apply'", function(){
@@ -258,7 +258,7 @@ describe("the JavaScript language", function(){
             return a + b;
         }
 
-        //expect(f.apply(f, [1,1])).toEqual('...');
+        expect(f.apply(f, [1,1])).toEqual(2);
     });
 
     it("doesnt have a private scope inside blocks", function(){
@@ -267,8 +267,8 @@ describe("the JavaScript language", function(){
           j += i;
         }
 
-        //expect(i).toEqual('...');
-        //expect(j).toEqual('...');
+        expect(i).toEqual(5);
+        expect(j).toEqual(10);
     });
 
     it("hoists variables the way you probably dont expect", function(){
@@ -282,10 +282,11 @@ describe("the JavaScript language", function(){
           return functions;
         }
 
-        //expect(generate()[0]()).toEqual('...');
-        //expect(generate()[1]()).toEqual('...');
+        expect(generate()[0]()).toEqual(5);
+        expect(generate()[1]()).toEqual(5);
     });
 
+/*
   });
 
 
@@ -593,7 +594,8 @@ describe("the JavaScript language", function(){
 
             //expect(eventWasFired).toBeFalsy();
         }); 
-      });  */
+      }); 
+       */
   });
 });
 
