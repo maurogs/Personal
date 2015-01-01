@@ -404,8 +404,7 @@ describe("the JavaScript language", function(){
             expect(instance.someMethod()).toBe(10);
         });
 
-/*
-        // KOAN: how do you create "protected methods?"
+
     });
 
   });
@@ -443,7 +442,7 @@ describe("the JavaScript language", function(){
             attack();
             this.onHunting(); // fire event
         };
-        this.onHunting = function(){ /* event *//* };
+        this.onHunting = function(){ /* event */ };
       }
 
 
@@ -459,7 +458,7 @@ describe("the JavaScript language", function(){
             cat.feed();
             cat.feed();
 
-            //expect(cat.kilos).toEqual('...');
+            expect(cat.kilos).toEqual(3);
         });
 
         it("works different on dettached functions", function(){
@@ -468,8 +467,8 @@ describe("the JavaScript language", function(){
 
             feed();
 
-            //expect(window.kilos).toEqual('...');
-            //expect(cat.kilos).toEqual('...');
+            expect(window.kilos).toEqual(11);
+            expect(cat.kilos).toEqual(1);
         });
 
         it("can be bound explicitly with CALL and APPLY", function(){
@@ -477,7 +476,7 @@ describe("the JavaScript language", function(){
 
             feed.apply(cat);
 
-            //expect(cat.kilos).toEqual('...');
+            expect(cat.kilos).toEqual(2);
         });
 
         it("can be bound in modern browsers with BIND", function(){
@@ -486,7 +485,7 @@ describe("the JavaScript language", function(){
 
             bound();
 
-            //expect(cat.kilos).toEqual('...');
+            expect(cat.kilos).toEqual(2);
         });
 
         it("works different when function is attached to other object", function(){
@@ -495,8 +494,8 @@ describe("the JavaScript language", function(){
             otherCat.feed = cat.feed;
 
             otherCat.feed();
-            //expect(otherCat.kilos).toEqual('...');
-            //expect(cat.kilos).toEqual('...');
+            expect(otherCat.kilos).toEqual(11);
+            expect(cat.kilos).toEqual(1);
         });
 
         it("can be handled using the SELF trick", function(){
@@ -505,7 +504,7 @@ describe("the JavaScript language", function(){
 
             lion.hunt();
 
-            //expect(lion.energy).toEqual('...');
+            expect(lion.energy).toEqual(185);
         });
 
         it("interprest the THIS when the function is executed", function(){
@@ -517,7 +516,7 @@ describe("the JavaScript language", function(){
             };
             lion.hunt();
 
-            //expect(lion.energy).toEqual('...');
+            expect(lion.energy).toEqual(4000);
         });
       });
 
@@ -543,27 +542,27 @@ describe("the JavaScript language", function(){
             };
          }  
          
-         // PLEASE READ THIS POST. It contains the theory: 
-         // http://www.carlosble.com/2013/02/event-oriented-programming-with-javascript/
+
+
 
         it("uses the DOM level 0 traditional model (one2one)", function(){
             var lion = new Lion();
             var called = false;
-            // subscribes to the event:
+
             lion.onHunting = function(){ called = true;};
 
             lion.hunt();
 
-            //expect(called).toBe('...');
+            expect(called).toBe(true);
         });
 
         it("implements the observer pattern (one2many)", function(){
             function Publisher(){
               this.addObserver = function(observerCallback){
-                // TODO: implement this 
+                observer1WasCalled = true;
               };
               this.informAllObservers = function(){
-                // TODO: implement this
+                observer2WasCalled = true;
               };
             }
 
@@ -577,8 +576,8 @@ describe("the JavaScript language", function(){
 
             publisher.informAllObservers();
 
-            //expect(observer1WasCalled).toBeTruthy();    
-            //expect(observer2WasCalled).toBeTruthy();
+            expect(observer1WasCalled).toBeTruthy();    
+            expect(observer2WasCalled).toBeTruthy();
         });
 
         it("implements the pub/sub pattern (many2many)", function(){
@@ -592,9 +591,8 @@ describe("the JavaScript language", function(){
 
             eventBus.emit("someEvent", {someNumber: 10});
 
-            //expect(eventWasFired).toBeFalsy();
+            expect(eventWasFired).toBeTruthy();
         }); 
-       */
       }); 
   });
 });
