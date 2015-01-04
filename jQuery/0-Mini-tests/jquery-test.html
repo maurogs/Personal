@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	
+		<script>
+		$(document).ready(function(){
+	//Al hacer "click" en el tag "button" se ejecuta la funcion
+			$("button").click(function(){
+				$("p").hide();
+				$("h1").hide();
+				$("#hide").hide()
+	//El .whore se refiere al class="whore" del elemento <h6>
+				$(".god").hide()
+	//El #bitch se refiere al id="bitch" del elemento <h5>
+				$("#think").hide()
+			});		
+	//El this se refiere a la clase P, es decir, a los tags P
+			$("p").click(function(){
+				$(this).hide();
+			})
+	//Mouseenter se ejecuta cuando el raton pasa por ecima de <h3 id="h31">
+			$("#h31").mouseenter(function(){
+    			alert("Vuelve a hacerlo si quieres");
+    		});
+	//Mouseleave se ejecuta cuando el raton se quita de  <h3 id="h32">
+			$("#h32").mouseleave(function(){
+				alert("Bien hecho!")
+			});
+
+	//Al hacer click en el form, el cuadro se vuelve gris
+			$("input").focus(function(){
+				$(this).css("background-color","DarkGray");
+			});
+	//Al hacer click fuera del cuadro, cambia de nuevo de color
+  			$("input").blur(function(){
+    			$(this).css("background-color","Aqua");
+    		});
+
+    //Al hacer click en el botón con id="show",
+    //los siguientes elementos vuelven a aparecer.
+    		$("#show").click(function(){
+    			$("#titulo").show(1000);
+    		});
+    //Este boton combina el hide y show con el texto h2 id="h21"
+    		$("#b1").click(function(){
+    			$("#h21").toggle();
+    		});
+		});
+		</script>
+
+		<style>
+			#h31{
+				border: 1px solid black;
+			}
+			#h32{
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>What are you telling me?</h1>
+		<p id="titulo">Do you think you are a god?</p>
+		<h5 id="think">Yeah, I think so.</h5>
+		<h6 class="god">I think I am not that kind of thing.</h6>
+		<br>
+			<h3>
+				<span id="h31">Pass the mouse through that text.</span>
+			</h3>
+		<br>
+		<br>
+			<h3>
+				<span id="h32">Put the mouse on that text, wait, and leave.</span>
+			</h3>
+		<br>
+		<br>
+		<button id="hide">Click to hide all gods</button>
+		<button id="show">Click to show all gods</button>
+		<br>
+		<br>
+		<br>
+		<h2>Enter your info:</h2>
+			Name: <input type="text" name="fullname"><br>
+			Email: <input type="text" name="email">
+		<br>
+		<br>
+		<br>
+		<br>
+		<button id="b1">Click to hide and click again to show</button>
+		<h2 id="h21">Appear and Dissapear</h2>
+	</body>
+</html>
