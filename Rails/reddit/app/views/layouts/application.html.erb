@@ -11,7 +11,7 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<div id="logo" class="navbar-brand">
-					<%= link_to 'Reddit', root_path %>
+					<%= link_to 'Roddit', root_path %>
 				</div>
 				<nav class="collapse navbar-collapse navbar-ex1-collapse">
 					<% if user_signed_in? %>
@@ -33,12 +33,12 @@
 
 	</header>
 
-	<div id="main" class="container">
+	<div id="main_content" class="container">
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 		<% end %>
 		
-		<div id="container" class="col-md9 center-block">
+		<div id="content" class="col-md9 center-block">
 			<%= yield %>
 		</div>
 	</div>
