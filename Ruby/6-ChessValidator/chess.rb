@@ -1,0 +1,10 @@
+system "clear"
+
+puts "bR bN bB bQ bK bB bN bR"
+puts "bP bP bP bP bP bP bP bP"
+puts "-- -- -- -- -- -- -- --"
+puts "-- -- -- -- -- -- -- --"
+puts "-- -- -- -- -- -- -- --"
+puts "-- -- -- -- -- -- -- --"
+puts "wP wP wP wP wP wP wP wP"
+puts "wR wN wB wQ wK wB wN wR"
