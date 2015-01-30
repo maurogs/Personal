@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
 	end
 
 	def edit
+		@recipe = Recipe.new recipe_params
 	end
 
 	def update
