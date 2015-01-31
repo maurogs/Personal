@@ -18,4 +18,6 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
-
+group :production do
+	gem 'pg'
+end
