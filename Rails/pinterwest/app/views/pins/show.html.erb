@@ -8,11 +8,6 @@
 				<h1><%= @pin.title %></h1>
 
 				<p><%= @pin.description %></p>
-
-				<p>
-					Submitted by
-					<%= @pin.user.email %>
-				</p>
 			</div>
 			<div class="panel-footer">
 				<div class="row">
@@ -30,7 +25,7 @@
 								</span>
 							<% end %>
 
-							<% if user_signed_in? %>
+							<% if @pin.user == current_user %>
 								<%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
 								<%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
 							<% end %>

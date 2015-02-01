@@ -5,8 +5,8 @@
 			<div class="panel-body">
 				<h2><%= link_to pin.title, pin %></h2>		
 				<p class="user">
-					Submitted by
-					<%= pin.user.email %>
+					Submitted <%= time_ago_in_words(pin.created_at) %> by
+					<%= pin.user.name %>
 				</p>	
 			</div>
 		 </div>
