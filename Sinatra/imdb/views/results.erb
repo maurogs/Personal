@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Results</title>
+	<title>Sinatra Test</title>
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- Responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		body{
+			background-color: black;
+			text-align: center;
+			padding-top: 100px;
+			color: white;
+			font-size: 50px;			
+		}
+		img{
+			width: 150px;
+			height: 200px;
+			border: solid yellow 1px;
+		}
+	</style>
+</head>
+<body>
+	<h3 class="text-center">Which of the movies was filmed in year <%= @year_correct %>?</h3>
+
+	<%= @hash.each do |u, v| %>
+		<a href="#" onClick="alert('The year of this movie is <%= y %>');">
+			<img src="<%= u %>">
+		</a>
+	<% end %>
+
+</body>
+</html>
